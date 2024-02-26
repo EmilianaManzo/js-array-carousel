@@ -1,5 +1,8 @@
 // elementi importati
 const imageBox = document.querySelector('.image-box');
+const iconUp = document.querySelector('.btn-up');
+const iconDown = document.querySelector('.btn-down');
+
 
 // variabili
 const img = [
@@ -11,8 +14,11 @@ const img = [
 ];
 
 
+// contatore immagini
+let counterImg = 0;
 
-// ciclo for
+
+// ciclo for per inserire le immagini nell' html
 
 for (let i= 0; i< img.length ; i++){
   console.log(i);
@@ -23,14 +29,28 @@ for (let i= 0; i< img.length ; i++){
 }
 
 
-// contatore immagini
-let counterImg = 0;
-
 // // prendo tutti gli elementi che sono tag img 
-const photocollection = document.querySelectorAll('img');
+const imgcollection = document.querySelectorAll('img');
 
-photocollection[counterImg].classList.remove('hide');
+imgcollection[counterImg].classList.remove('hide');
+
+// Inizio bottoni con addEventListener
+
+iconUp.addEventListener('click', function(){
+  imgcollection[counterImg].classList.add('hide');
+  
+  counterImg++;
+
+  imgcollection[counterImg].classList.remove('hide');
+});
 
 
+iconDown.addEventListener('click', function(){
+  imgcollection[counterImg].classList.add('hide');
 
+  counterImg--;
+
+  imgcollection[counterImg].classList.remove('hide');
+  
+});
 

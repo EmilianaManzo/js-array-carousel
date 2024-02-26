@@ -45,11 +45,11 @@
   cursor: pointer;
 }
 
-.icons.up{
+.icons.btn-up{
   top: 2%;
 }
 
-.icons.down{
+.icons.btn-down{
   bottom: 2%;
 }
 

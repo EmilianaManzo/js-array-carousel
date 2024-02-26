@@ -8,3 +8,5 @@ Dato un array contenente una lista di cinque immagini, creare un carosello come 
 3. creo un ciclo for per inserire le immagini all'interno dell'array.
 4. creo nel css una classe (.hide) per nascondere le immagini e la inserisco ad ogni ciclo del for
 5. tolgo la classe .hide alla prima immagine
+6. collego i bottoni in javascript
+7. ai click dei bottoni incremento e decremento il contatore che ho creato in precedenza.
