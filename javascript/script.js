@@ -5,7 +5,7 @@ const iconDown = document.querySelector('.btn-down');
 
 
 // variabili
-const img = [
+const imgArr = [
   'assets/img/01.webp' ,
   'assets/img/02.webp' ,
   'assets/img/03.webp' ,
@@ -20,9 +20,9 @@ let counterImg = 0;
 
 // ciclo for per inserire le immagini nell' html
 
-for (let i= 0; i< img.length ; i++){
+for (let i= 0; i< imgArr.length ; i++){
   console.log(i);
-  const image = img[i];
+  const image = imgArr[i];
 
   imageBox.innerHTML += `<img src=" ${image} " class="hide" >`;
   
@@ -41,6 +41,10 @@ iconUp.addEventListener('click', function(){
   
   counterImg++;
 
+  if (counterImg > imgArr.length-1){
+    counterImg = 0;
+  }
+
   imgcollection[counterImg].classList.remove('hide');
 });
 
@@ -49,8 +53,13 @@ iconDown.addEventListener('click', function(){
   imgcollection[counterImg].classList.add('hide');
 
   counterImg--;
-
+  
+  if (counterImg < 0){
+    counterImg = imgArr.length-1;
+  }
+  
   imgcollection[counterImg].classList.remove('hide');
+  
   
 });
 

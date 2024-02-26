@@ -10,3 +10,7 @@ Dato un array contenente una lista di cinque immagini, creare un carosello come 
 5. tolgo la classe .hide alla prima immagine
 6. collego i bottoni in javascript
 7. ai click dei bottoni incremento e decremento il contatore che ho creato in precedenza.
+8. BONUS 1:
+  -creo dei cicli if all'interno dei bottoni dove come condizione dove uso il contatore e la lunghezza dell'array per creare il loop.
+9. BONUS 2: 
+  -
