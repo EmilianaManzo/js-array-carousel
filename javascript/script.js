@@ -1,5 +1,6 @@
 // elementi importati
 const imageBox = document.querySelector('.image-box');
+const thumb = document.querySelector('.thumbnails');
 const iconUp = document.querySelector('.btn-up');
 const iconDown = document.querySelector('.btn-down');
 
@@ -14,6 +15,7 @@ const imgArr = [
 ];
 
 
+
 // contatore immagini
 let counterImg = 0;
 
@@ -23,22 +25,31 @@ let counterImg = 0;
 for (let i= 0; i< imgArr.length ; i++){
   console.log(i);
   const image = imgArr[i];
-
-  imageBox.innerHTML += `<img src=" ${image} " class="hide" >`;
+  const imgthumb = imgArr[i];
   
+
+  imageBox.innerHTML += `<img src=" ${image} " class="imgb hide" >`;
+  thumb.innerHTML += `<img src=" ${imgthumb}" alt="" class="imgm layer">`;
+
 }
 
 
 // // prendo tutti gli elementi che sono tag img 
-const imgcollection = document.querySelectorAll('img');
+const imgcollection = document.getElementsByClassName('imgb');
+
+const imgMini = document.getElementsByClassName('imgm');
+
 
 imgcollection[counterImg].classList.remove('hide');
+imgMini[counterImg].classList.add('active');
+
+
 
 // Inizio bottoni con addEventListener
 
 iconUp.addEventListener('click', function(){
   imgcollection[counterImg].classList.add('hide');
-  
+  imgMini[counterImg].classList.remove('active');
   counterImg++;
 
   if (counterImg > imgArr.length-1){
@@ -46,11 +57,14 @@ iconUp.addEventListener('click', function(){
   }
 
   imgcollection[counterImg].classList.remove('hide');
+  imgMini[counterImg].classList.add('active');
+
 });
 
 
 iconDown.addEventListener('click', function(){
   imgcollection[counterImg].classList.add('hide');
+  imgMini[counterImg].classList.remove('active');
 
   counterImg--;
   
@@ -59,7 +73,8 @@ iconDown.addEventListener('click', function(){
   }
   
   imgcollection[counterImg].classList.remove('hide');
-  
+  imgMini[counterImg].classList.add('active');
+
   
 });
 

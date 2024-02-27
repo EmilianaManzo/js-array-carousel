@@ -8,6 +8,15 @@
   display: none;
 }
 
+.layer{
+  opacity: 0.3;
+}
+
+.active{
+  opacity: 1;
+  border: 2px solid white;
+}
+
 .container{
   background-color: black;
   height: 100vh;
@@ -18,12 +27,14 @@
 
 .slider{
   height: 60%;
-  width: 80%;
+  width: 70%;
+  display: flex;
   position: relative;
 }
 
 .image-box{
   height: 100%;
+  width: 80%;
 }
 
 .image-box img{
@@ -40,7 +51,7 @@
   text-align: center;
   line-height: 30px;
   position: absolute;
-  left: 50%;
+  right: 70px;
   transform: translate(-50%);
   cursor: pointer;
 }
@@ -55,4 +66,17 @@
 
 .icons:hover{
   background-color: rgba(255, 255, 255, 1);
+}
+
+.thumbnails{
+  height: 100%;
+  width: 20%;
+}
+
+
+.thumbnails img{
+  width: 100%;
+  height: calc(100% / 5);
+  object-fit: cover;
+  display: block;
 }
